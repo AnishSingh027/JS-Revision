@@ -21,3 +21,24 @@ function increment(ch) {
     }
   }
 ```
+
+# Currying
+
+- **_Currying means breaking a function that takes many arguments into smaller functions that take one argument at a time._**
+
+- **_Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c)._**
+
+```
+function add1(a) {
+  console.log("First");
+  return function (b) {
+    console.log("Second");
+    return function (c) {
+      console.log("Third");
+      return a + b + c;
+    };
+  };
+}
+
+console.log(add1(3)(4)(3));
+```
